@@ -1,6 +1,7 @@
 
 package common_Function;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -420,6 +421,19 @@ public static String uploadFile(WebDriver driver, String locatorType, String loc
 	         Thread.sleep(1000);
 	   
 	         return null ;
+
+	 }
+	
+
+	public static String Alert(WebDriver driver) throws Exception
+	 
+	 {
+		Alert alert = driver.switchTo().alert();                                         //Alert handling for Please enter a effect name
+	     String Alert = alert.getText();
+	     System.out.println("Alert msg for DeleteEffect:"+Alert);
+	     alert.accept();
+	     Thread.sleep(2000);
+	     return null ;
 
 	 }
 	

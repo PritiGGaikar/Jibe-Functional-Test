@@ -83,12 +83,16 @@ public synchronized static ExtentReports getReporter(String filePath) { //allow 
 		click_element( driver, "id",(data.getData(4, 1317, 2)));  //Path for Save
 		Thread.sleep(2000);
 		
+		Alert(driver); 
+		/*
+		 * 
+		 * 
 		Alert alert = driver.switchTo().alert();                                         //Alert handling for Please enter a effect name
 	     String Alert = alert.getText();
 	     System.out.println("Alert msg for DeleteEffect:"+Alert);
 	     alert.accept();
 	     Thread.sleep(2000);
-		
+		*/
 		
 		sendkeys( driver,"id",(data.getData(4, 1315, 2)), (data.getData(4, 1316, 2)));  //Path for Add New Effect name
 		Thread.sleep(1000);

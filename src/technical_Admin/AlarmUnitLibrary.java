@@ -89,7 +89,7 @@ public class AlarmUnitLibrary extends RW{
 			WebDriver driver = driver1;
 			
 			
-			ArrayList<Row> row= data.searchSheet("Jibe1", 11,9);
+			ArrayList<Row> row= data.searchSheet("F8", 10,9);
 			
 			for(int i=0;i<row.size();i++)
 			{
@@ -106,6 +106,7 @@ public class AlarmUnitLibrary extends RW{
 									{
 										click_element(driver, "id",strControl); //Click on Add New Group
 										Thread.sleep(2000);
+										
 									}
 								
 
@@ -123,12 +124,39 @@ public class AlarmUnitLibrary extends RW{
 										sendkeys(driver,"id", strControl, row.get(i+1).getCell(2).getStringCellValue()); //Sendkeys for Group Name
 										Thread.sleep(1000);
 									}
-								
+
+									if(strControlTypeKey.compareTo("C12")==0)
+									{
+										click_element(driver, "id",strControl); //Click on Add New Group
+										Thread.sleep(2000);
+										
+										Alert(driver);
+										Thread.sleep(2000);
+										
+										
+									}	
 							
 							}
 					}
 			}
 			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*	
 		click_element( driver, "id",(data.getData(4, 1274, 2)));  //Path for Add New unit
 		Thread.sleep(1000);
@@ -174,6 +202,60 @@ public class AlarmUnitLibrary extends RW{
 			WebDriver driver = driver1;
 			
 			
+ArrayList<Row> row= data.searchSheet("Edit", 10,9);
+			
+			for(int i=0;i<row.size();i++)
+			{
+					String strControl=row.get(i).getCell(2).getStringCellValue();
+					if(row.get(i).getCell(10)!=null)
+					{
+							
+						
+						String strControlTypeKey=row.get(i).getCell(10).toString();
+
+						if(strControlTypeKey.compareTo("C11")!=0)
+						{
+								if(strControlTypeKey.compareTo("C2")==0)
+									{
+										click_element(driver, "id",strControl); //Click on Add New Group
+										Thread.sleep(2000);
+										
+										
+										
+									}	
+										
+									
+								
+
+								
+									if(strControlTypeKey.compareTo("C3")==0)
+									{
+										dropdown(driver, "id", strControl,row.get(i+1).getCell(2).getStringCellValue());// Dropdown -->PO Type  -->Contract
+										Thread.sleep(2000);	
+										
+										
+									}
+									
+									if(strControlTypeKey.compareTo("C4")==0)
+									{
+										sendkeys(driver,"id", strControl, row.get(i+1).getCell(2).getStringCellValue()); //Sendkeys for Group Name
+										Thread.sleep(1000);
+									}
+								
+									
+							
+							}
+					}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		/*	
 			//--------------------------Edit Added unit-------------------------//
 			
 
@@ -295,6 +377,6 @@ public class AlarmUnitLibrary extends RW{
 		
 	    click_element( driver, "id",(data.getData(4, 1304, 2)));  //Path for Export to excel
 		 Thread.sleep(1000);
-			
+			*/
 		}
-}
+		}

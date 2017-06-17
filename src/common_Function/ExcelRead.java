@@ -151,49 +151,51 @@ public class ExcelRead
 	        }
 	        
 	        sheet1 = wb.getSheetAt(sheetNumber);
-	      	  
-	    	//Cell = sheet1.getRow(row).getCell(column);
-	      	   
-	      //   String data = CellToString(Cell);
-	        //Iterate rows
-	      //   int j=196;
-	        for (int j = sheet1.getFirstRowNum(); j <= sheet1.getLastRowNum(); j++) {
-
-	           
-	          
-	            //Iterate columns
-	        	int k=functionkeyColumnIndex;
-	          //  for (int k = sheet1.getRow(j).getFirstCellNum(); k < sheet1.getRow(j).getLastCellNum(); k++) {
-	                XSSFCell cell = sheet1.getRow(j).getCell(k);
-	                 
-	               //Search value based on cell type
-	                if(cell!=null)
-	                {
-			               switch (cell.getCellTypeEnum()) {
-			                case  NUMERIC:
-			                    if(doubleValue != null && doubleValue.doubleValue() == cell.getNumericCellValue()) {
-			                        filteredRows.add(sheet1.getRow(j));
-			                    }
-			                    break;
-			                case STRING:
-			                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
-			                        filteredRows.add(sheet1.getRow(j));
-			                    }
-			                    break;
-			                case BOOLEAN:
-			                    if(booleanValue != null && booleanValue.booleanValue() == cell.getBooleanCellValue()) {
-			                        filteredRows.add(sheet1.getRow(j));
-			                    }
-			                    break;
-			                default:
-			                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
-			                        filteredRows.add(sheet1.getRow(j));
-			                    }
-			                    break;
-			                }
-	                }
-	            //}
-	        }
+	      
+	        if(sheet1!=null)
+	        {
+		        for (int j = sheet1.getFirstRowNum(); j <= sheet1.getLastRowNum(); j++) {
+	
+		           
+		          
+		            //Iterate columns
+		        	int k=functionkeyColumnIndex;
+		          //  for (int k = sheet1.getRow(j).getFirstCellNum(); k < sheet1.getRow(j).getLastCellNum(); k++) {
+		        	
+		               
+		                if(sheet1.getRow(j)!=null)
+		                {
+		               //Search value based on cell type
+				                if(sheet1.getRow(j).getCell(k)!=null )
+				                {
+				                	 XSSFCell cell = sheet1.getRow(j).getCell(k);
+						               switch (cell.getCellTypeEnum()) {
+						                case  NUMERIC:
+						                    if(doubleValue != null && doubleValue.doubleValue() == cell.getNumericCellValue()) {
+						                        filteredRows.add(sheet1.getRow(j));
+						                    }
+						                    break;
+						                case STRING:
+						                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
+						                        filteredRows.add(sheet1.getRow(j));
+						                    }
+						                    break;
+						                case BOOLEAN:
+						                    if(booleanValue != null && booleanValue.booleanValue() == cell.getBooleanCellValue()) {
+						                        filteredRows.add(sheet1.getRow(j));
+						                    }
+						                    break;
+						                default:
+						                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
+						                        filteredRows.add(sheet1.getRow(j));
+						                    }
+						                    break;
+						                }
+				                }
+		                }
+		            //}
+		        }
+		     }
 	        return filteredRows;
 	    }
 	

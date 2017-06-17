@@ -7,6 +7,7 @@
         <methods>
           <include name="closeBrowser"/>
           <include name="AddNewGroup"/>
+          <include name="ApprovalSettings"/>
           <include name="initialioseBrowser"/>
           <include name="beforeSu"/>
           <include name="afterMethod"/>
