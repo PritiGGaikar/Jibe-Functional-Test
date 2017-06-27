@@ -20,7 +20,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 public class ExcelRead 
 {
 	 
-	 XSSFWorkbook wb;
+ XSSFWorkbook wb;
 	 
 	 XSSFSheet sheet1;
 	 
@@ -115,89 +115,105 @@ public class ExcelRead
 	 //+++++++++++++++++++++End method column count++++++++++++++++++++++++++++++//
 	 
 	 
-	
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-		
-	
-	public  ArrayList<Row> searchSheet(String searchText,int sheetNumber,int functionkeyColumnIndex) {
-	        // This parameter is for appending sheet rows to mergedSheet in the end
-	        
-	        Double doubleValue = null;
-	        Boolean booleanValue = null;
-	        ArrayList<Row> filteredRows = new ArrayList<Row>();
+		public  ArrayList<Row> searchSheet(String searchText,int sheetNumber,int functionkeyColumnIndex) {
+		        // This parameter is for appending sheet rows to mergedSheet in the end
+		        
+		        Double doubleValue = null;
+		        Boolean booleanValue = null;
+		        ArrayList<Row> filteredRows = new ArrayList<Row>();
 
-	        //Get double value if searchText is double
-	        try {
-	            doubleValue = Double.parseDouble(searchText);
-	        } catch(Exception e) {  
-	        }
-	        
-	        //Get boolean value if searchText is boolean
-	        try {
-	            booleanValue = Boolean.parseBoolean(searchText);
-	        } catch(Exception e) {  
-	        }
-	        
-	        sheet1 = wb.getSheetAt(sheetNumber);
-	      
-	        if(sheet1!=null)
-	        {
-		        for (int j = sheet1.getFirstRowNum(); j <= sheet1.getLastRowNum(); j++) {
-	
-		           
-		          
-		            //Iterate columns
-		        	int k=functionkeyColumnIndex;
-		          //  for (int k = sheet1.getRow(j).getFirstCellNum(); k < sheet1.getRow(j).getLastCellNum(); k++) {
-		        	
-		               
-		                if(sheet1.getRow(j)!=null)
-		                {
-		               //Search value based on cell type
-				                if(sheet1.getRow(j).getCell(k)!=null )
-				                {
-				                	 XSSFCell cell = sheet1.getRow(j).getCell(k);
-						               switch (cell.getCellTypeEnum()) {
-						                case  NUMERIC:
-						                    if(doubleValue != null && doubleValue.doubleValue() == cell.getNumericCellValue()) {
-						                        filteredRows.add(sheet1.getRow(j));
-						                    }
-						                    break;
-						                case STRING:
-						                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
-						                        filteredRows.add(sheet1.getRow(j));
-						                    }
-						                    break;
-						                case BOOLEAN:
-						                    if(booleanValue != null && booleanValue.booleanValue() == cell.getBooleanCellValue()) {
-						                        filteredRows.add(sheet1.getRow(j));
-						                    }
-						                    break;
-						                default:
-						                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
-						                        filteredRows.add(sheet1.getRow(j));
-						                    }
-						                    break;
-						                }
-				                }
-		                }
-		            //}
+		        //Get double value if searchText is double
+		        try {
+		            doubleValue = Double.parseDouble(searchText);
+		        } catch(Exception e) {  
 		        }
-		     }
-	        return filteredRows;
-	    }
-	
+		        
+		        //Get boolean value if searchText is boolean
+		        try {
+		            booleanValue = Boolean.parseBoolean(searchText);
+		        } catch(Exception e) {  
+		        }
+		        
+		        sheet1 = wb.getSheetAt(sheetNumber);
+		      
+		        if(sheet1!=null)
+		        {
+			        for (int j = sheet1.getFirstRowNum(); j <= sheet1.getLastRowNum(); j++) {
+		
+			           
+			          
+			            //Iterate columns
+			        	int k=functionkeyColumnIndex;
+			          //  for (int k = sheet1.getRow(j).getFirstCellNum(); k < sheet1.getRow(j).getLastCellNum(); k++) {
+			        	
+			               
+			                if(sheet1.getRow(j)!=null)
+			                {
+			               //Search value based on cell type
+					                if(sheet1.getRow(j).getCell(k)!=null )
+					                {
+					                	 XSSFCell cell = sheet1.getRow(j).getCell(k);
+							               switch (cell.getCellTypeEnum()) {
+							                case  NUMERIC:
+							                    if(doubleValue != null && doubleValue.doubleValue() == cell.getNumericCellValue()) {
+							                        filteredRows.add(sheet1.getRow(j));
+							                    }
+							                    break;
+							                case STRING:
+							                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
+							                        filteredRows.add(sheet1.getRow(j));
+							                    }
+							                    break;
+							                case BOOLEAN:
+							                    if(booleanValue != null && booleanValue.booleanValue() == cell.getBooleanCellValue()) {
+							                        filteredRows.add(sheet1.getRow(j));
+							                    }
+							                    break;
+							                default:
+							                    if(searchText != null && searchText.equals(cell.getStringCellValue())) {
+							                        filteredRows.add(sheet1.getRow(j));
+							                    }
+							                    break;
+							                }
+					                }
+			                }
+			            //}
+			        }
+			     }
+		        return filteredRows;
+		    }
+		
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

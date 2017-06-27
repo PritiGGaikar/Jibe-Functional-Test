@@ -22,11 +22,12 @@ public class ItemCategoryTest extends WebDriverPass{
 	
 
    @Test(priority=33)
-  public void ItemCategory() throws InterruptedException {
+  public void ItemCategory() throws Exception {
 	   test=report.startTest("Item Category");	  
 	   w.ItemCategorys(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Item Category"); 
+	  test.log(LogStatus.PASS, "Purchase-->Admin-->Item Category"); 
+	  System.out.println("Item Category URL open successfully");
   }
    
    @Test(priority=34)
@@ -34,7 +35,9 @@ public class ItemCategoryTest extends WebDriverPass{
  	   test=report.startTest("Add New Category");	  
  	   w.AddNewCategory(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Add New Category"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Add New Category"); 
+ 	 System.out.println("Positive Test Case for Add New Category is executed successfully ");
+ 	 System.out.println("Negative Test Case for Add New Category is executed successfully ");
    }
     
    
@@ -43,7 +46,9 @@ public class ItemCategoryTest extends WebDriverPass{
  	   test=report.startTest("Edit New Category");	  
  	   w.EditNewCategory(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Edit New Category"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Edit New Category"); 
+ 	 System.out.println("Positive Test Case for Edit New Category is executed successfully ");
+ 	 System.out.println("Negative Test Case for Edit New Category is executed successfully ");
    }
    
    @Test(priority=36)
@@ -51,7 +56,9 @@ public class ItemCategoryTest extends WebDriverPass{
  	   test=report.startTest("Delete Category");	  
  	   w.DeleteCategory(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Delete Category"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Delete Category"); 
+ 	 System.out.println("Positive Test Case for Delete Category is executed successfully ");
+ 	 System.out.println("Negative Test Case for Delete Category is executed successfully ");
    }
 
    @AfterMethod
@@ -68,7 +75,7 @@ public class ItemCategoryTest extends WebDriverPass{
  }
   @BeforeSuite
   public void beforeSu() {
-	   report = LOTestingLabList.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
+	   report = UnitPackings.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
   
 /*  @AfterSuite
  public void afterSu() {

@@ -3,16 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="purchase_Admin.ApprovalSettingTest">
+      <class name="purchase_Admin.UnitPackingsTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="AddNewGroup"/>
-          <include name="ApprovalSettings"/>
-          <include name="initialioseBrowser"/>
           <include name="beforeSu"/>
           <include name="afterMethod"/>
+          <include name="initialioseBrowser"/>
+          <include name="UnitPacking"/>
         </methods>
-      </class> <!-- purchase_Admin.ApprovalSettingTest -->
+      </class> <!-- purchase_Admin.UnitPackingsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

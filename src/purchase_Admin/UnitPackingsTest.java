@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import common_Function.WebDriverPass;
 import purchase_Admin.UnitPackings;
-import quality_Admin.FormTypeLibrary;
+
 
 public class UnitPackingsTest extends WebDriverPass{
 
@@ -23,11 +23,13 @@ public class UnitPackingsTest extends WebDriverPass{
 	
 
    @Test(priority=11)
-   public void UnitPacking() throws InterruptedException {
-	   test=report.startTest("Unit Packing");	  
+   public void UnitPacking() throws Exception {
+	   test=report.startTest("Unit Packing URL");	  
 	   w.UnitPacking(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Unit Packing"); 
+	  test.log(LogStatus.PASS, "Purchase-->Admin-->Unit Packing URL"); 
+	  System.out.println("Unit Packing URL open successfully");
+	  
   }
    
    @Test(priority=12)
@@ -36,23 +38,29 @@ public class UnitPackingsTest extends WebDriverPass{
  	   w.AddUnitPacking(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Add Unit Packing"); 
+ 	 System.out.println("Positive Test Case for Add Unit Packing is executed successfully ");
+ 	 System.out.println("Negative Test Case for Add Unit Packing is executed successfully ");
    }
    
-   
+  
    @Test(priority=13)
    public void EditUnitPacking() throws Exception {
  	   test=report.startTest("Edit Unit Packing");	  
  	   w.EditUnitPacking(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Edit Unit Packing"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Edit Unit Packing"); 
+ 	 System.out.println("Positive Test Case for Edit Unit Packing is executed successfully ");
+ 	 System.out.println("Negative Test Case for Edit Unit Packing is executed successfully ");
    }
    
    @Test(priority=14)
    public void DeletetUnitPacking() throws Exception {
- 	   test=report.startTest("Delet etUni Packing");	  
+ 	   test=report.startTest("Delete Unit Packing");	  
  	   w.DeletetUnitPacking(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Deletet Unit Packing"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Delete Unit Packing"); 
+ 	 System.out.println("Positive Test Case for Delete Unit Packing is executed successfully ");
+ 	 System.out.println("Negative Test Case for Delete Unit Packing is executed successfully ");
    }
    
    
@@ -77,7 +85,7 @@ public class UnitPackingsTest extends WebDriverPass{
  }
   @BeforeSuite
   public void beforeSu() {
-	  report = LOTestingLabList.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
+	  report = UnitPackings.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
   
  /* @AfterSuite
  public void afterSu() {

@@ -32,11 +32,11 @@ public class loginpage extends RW
 		 
 		 
 		 
-	     driver.findElement(By.id(data.getData(2, 1, 2))).sendKeys(data.getData(1,1,0));  // Read username from excelsheet
+	     driver.findElement(By.id(jibe_config.getData(2, 1, 2))).sendKeys(jibe_config.getData(1,1,0));  // Read username from excelsheet
 			   
-		 driver.findElement(By.id(data.getData(2, 2, 2))).sendKeys(data.getData(1,1,1)); //   Read Password from excelsheet
+		 driver.findElement(By.id(jibe_config.getData(2, 2, 2))).sendKeys(jibe_config.getData(1,1,1)); //   Read Password from excelsheet
 			   
-	     driver.findElement(By.id(data.getData(2, 3, 2))).click(); 				    //  Read login button  from excelsheet
+	     driver.findElement(By.id(jibe_config.getData(2, 3, 2))).click(); 				    //  Read login button  from excelsheet
 	     
 	     String title = driver.getTitle().trim();         // Get trim title from web.
 	       

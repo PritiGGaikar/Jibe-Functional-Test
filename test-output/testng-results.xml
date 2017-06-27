@@ -1,70 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23111" started-at="2017-06-14T07:28:47Z" finished-at="2017-06-14T07:29:10Z">
+  <suite name="Default suite" duration-ms="102063" started-at="2017-06-27T06:06:08Z" finished-at="2017-06-27T06:07:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23111" started-at="2017-06-14T07:28:47Z" finished-at="2017-06-14T07:29:10Z">
-      <class name="technical_Admin.AlarmUnitLibraryTest">
-        <test-method status="PASS" signature="initialioseBrowser()[pri:0, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="initialioseBrowser" is-config="true" duration-ms="13447" started-at="2017-06-14T12:58:34Z" finished-at="2017-06-14T12:58:47Z">
+    <test name="Default test" duration-ms="102063" started-at="2017-06-27T06:06:08Z" finished-at="2017-06-27T06:07:50Z">
+      <class name="purchase_Admin.UnitPackingsTest">
+        <test-method status="PASS" signature="initialioseBrowser()[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="initialioseBrowser" is-config="true" duration-ms="14078" started-at="2017-06-27T11:35:54Z" finished-at="2017-06-27T11:36:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialioseBrowser -->
-        <test-method status="PASS" signature="beforeSu()[pri:0, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="beforeSu" is-config="true" duration-ms="80" started-at="2017-06-14T12:58:47Z" depends-on-methods="common_Function.WebDriverPass.initialioseBrowser" finished-at="2017-06-14T12:58:47Z">
+        <test-method status="PASS" signature="beforeSu()[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="beforeSu" is-config="true" duration-ms="59" started-at="2017-06-27T11:36:08Z" depends-on-methods="common_Function.WebDriverPass.initialioseBrowser" finished-at="2017-06-27T11:36:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSu -->
-        <test-method status="PASS" signature="AlarmUnit()[pri:26, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="AlarmUnit" duration-ms="4287" started-at="2017-06-14T12:58:47Z" finished-at="2017-06-14T12:58:52Z">
+        <test-method status="PASS" signature="UnitPacking()[pri:11, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="UnitPacking" duration-ms="3514" started-at="2017-06-27T11:36:08Z" finished-at="2017-06-27T11:36:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AlarmUnit -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="afterMethod" is-config="true" duration-ms="191" started-at="2017-06-14T12:58:52Z" finished-at="2017-06-14T12:58:52Z">
+        </test-method> <!-- UnitPacking -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="178" started-at="2017-06-27T11:36:12Z" finished-at="2017-06-27T11:36:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AlarmUnit status=SUCCESS method=AlarmUnitLibraryTest.AlarmUnit()[pri:26, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011] output={null}]]]>
+                <![CDATA[[TestResult name=UnitPacking status=SUCCESS method=UnitPackingsTest.UnitPacking()[pri:11, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="PMSAlarmUnit()[pri:27, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="PMSAlarmUnit" duration-ms="3142" started-at="2017-06-14T12:58:52Z" finished-at="2017-06-14T12:58:55Z">
+        <test-method status="PASS" signature="AddUnitPacking()[pri:12, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="AddUnitPacking" duration-ms="40253" started-at="2017-06-27T11:36:12Z" finished-at="2017-06-27T11:36:52Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PMSAlarmUnit -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="afterMethod" is-config="true" duration-ms="26" started-at="2017-06-14T12:58:55Z" finished-at="2017-06-14T12:58:55Z">
+        </test-method> <!-- AddUnitPacking -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="60" started-at="2017-06-27T11:36:52Z" finished-at="2017-06-27T11:36:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=PMSAlarmUnit status=SUCCESS method=AlarmUnitLibraryTest.PMSAlarmUnit()[pri:27, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011] output={null}]]]>
+                <![CDATA[[TestResult name=AddUnitPacking status=SUCCESS method=UnitPackingsTest.AddUnitPacking()[pri:12, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="AddNewUnit()[pri:28, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="AddNewUnit" duration-ms="15399" started-at="2017-06-14T12:58:55Z" finished-at="2017-06-14T12:59:10Z">
+        <test-method status="PASS" signature="EditUnitPacking()[pri:13, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="EditUnitPacking" duration-ms="24737" started-at="2017-06-27T11:36:52Z" finished-at="2017-06-27T11:37:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddNewUnit -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="afterMethod" is-config="true" duration-ms="50" started-at="2017-06-14T12:59:10Z" finished-at="2017-06-14T12:59:10Z">
+        </test-method> <!-- EditUnitPacking -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="55" started-at="2017-06-27T11:37:17Z" finished-at="2017-06-27T11:37:17Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddNewUnit status=SUCCESS method=AlarmUnitLibraryTest.AddNewUnit()[pri:28, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011] output={null}]]]>
+                <![CDATA[[TestResult name=EditUnitPacking status=SUCCESS method=UnitPackingsTest.EditUnitPacking()[pri:13, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:technical_Admin.AlarmUnitLibraryTest@6d4e5011]" name="closeBrowser" is-config="true" duration-ms="749" started-at="2017-06-14T12:59:10Z" finished-at="2017-06-14T12:59:11Z">
+        <test-method status="PASS" signature="DeletetUnitPacking()[pri:14, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="DeletetUnitPacking" duration-ms="33191" started-at="2017-06-27T11:37:17Z" finished-at="2017-06-27T11:37:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeletetUnitPacking -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="53" started-at="2017-06-27T11:37:50Z" finished-at="2017-06-27T11:37:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=DeletetUnitPacking status=SUCCESS method=UnitPackingsTest.DeletetUnitPacking()[pri:14, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="closeBrowser" is-config="true" duration-ms="758" started-at="2017-06-27T11:37:50Z" finished-at="2017-06-27T11:37:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- technical_Admin.AlarmUnitLibraryTest -->
+      </class> <!-- purchase_Admin.UnitPackingsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
