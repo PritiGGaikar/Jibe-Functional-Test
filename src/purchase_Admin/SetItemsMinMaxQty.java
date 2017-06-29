@@ -1,11 +1,12 @@
 package purchase_Admin;
 
+import java.util.ArrayList;
+
+import org.apache.poi.ss.usermodel.Row;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
@@ -29,11 +30,86 @@ public class SetItemsMinMaxQty extends RW{
 		    return report;
 		}
 
-		public void MinMaxQuantity (WebDriver driver1) throws InterruptedException {  //(priority=9)
+		public void MinMaxQuantity (WebDriver driver1) throws Exception {  //(priority=9)
 
 			WebDriver driver = driver1;
 			
+			 
+		     ArrayList<Row> row= OR_Purchase_m.searchSheet("MinMaxQuantityURL",2,9);//Functn key,sheetNo.,Column no.// Xpath locator
+		     ArrayList<Row> row1=input_purc_m.searchSheet("MinMaxQuantityURL", 2,0);//Functn key, sheet no,//test data excel
+		 	
+		     
+			for(int i=0;i<row.size();i++)
+				{
+					String strValue=""; 
+					String strControl=row.get(i).getCell(2).getStringCellValue();
+					 for(int j=0;j<row1.size();j++)
+					 {
+						 if(row.get(i).getCell(0)!=null)
+							{
+							
+							 	if(row1.get(j).getCell(1)!=null)
+								{
+								  if(row.get(i).getCell(0).toString().compareTo(row1.get(j).getCell(1).toString())==0)
+								  {
+									  strValue=row1.get(j).getCell(2).toString();
+									  
+									  switch(row1.get(j).getCell(2).getCellTypeEnum()){
+									     
+									     case NUMERIC: 
+									    	 strValue=String.valueOf(row1.get(j).getCell(2).getNumericCellValue());
+									    	 break;
+									     case STRING:
+									    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+									    	 break;
+									     case BOOLEAN:
+									    	 strValue=String.valueOf(row1.get(j).getCell(2).getBooleanCellValue());
+									    	 break;
+									     default:
+									    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+									    	 break;
+									     }
+									     
+								  }
+								}
+							}
+					 
+					 }
+					 
+					
+						
+						if(row.get(i).getCell(10)!=null)
+						{
+								
+							
+							String strControlTypeKey=row.get(i).getCell(10).toString();
 
+							if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
+								if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
+									click_element(driver, "id", strControl); 
+									Thread.sleep(2000);
+								}
+
+
+								if (strControlTypeKey.compareTo("Url_Ctrl") == 0) {
+									driver.get(strValue); 
+									Thread.sleep(2000);
+
+								}
+
+							
+								
+								
+				}
+						}}
+				}
+		
+		
+			
+			
+								
+			
+/*
 		     driver.get("http://192.168.1.102/JIBE/purchase/PURC_Items_Quantity_List.aspx");      //Purchase-->Admin--> Min-Max Quantity 
 		     Thread.sleep(2000);
 		     
@@ -50,7 +126,7 @@ public class SetItemsMinMaxQty extends RW{
 		 		
 		 	}
 			
-			/*WebElement Purchase = driver.findElement(By.linkText(data.getData(5,2,2))); // pathfor "Purchase"
+			WebElement Purchase = driver.findElement(By.linkText(data.getData(5,2,2))); // pathfor "Purchase"
 			Actions action = new Actions(driver);
 			action.moveToElement(Purchase).build().perform();
 			action.moveToElement(Purchase).perform();	
@@ -63,16 +139,122 @@ public class SetItemsMinMaxQty extends RW{
 
 			WebElement SetItemsMinMaxQty  = driver.findElement(By.linkText(data.getData(5,62,2))); // path for Set Item's Min Max Qty
 			SetItemsMinMaxQty.click();    	
-			Thread.sleep(3000);*/
+			Thread.sleep(3000);
 			
-		}
+		}*/
 		
 		public void CatalogueItem(WebDriver driver1) throws Exception {  //(priority=10)
 
 			WebDriver driver = driver1;
 			
+
+			  ArrayList<Row> row= OR_Purchase_m.searchSheet("CatalogueItem",2,9);//Functn key,sheetNo.,Column no.// Xpath locator
+			     ArrayList<Row> row1=input_purc_m.searchSheet("CatalogueItem",2,0);//Functn key, sheet no,//test data excel
+			 	
+			    
+			    
+			    
+			    
+			    
+					for(int i=0;i<row.size();i++)
+					{
+						String strValue=""; 
+						String strControl=row.get(i).getCell(2).getStringCellValue();
+						 for(int j=0;j<row1.size();j++)
+						 {
+							 if(row.get(i).getCell(0)!=null)
+								{
+								
+								 	if(row1.get(j).getCell(1)!=null)
+									{
+									  if(row.get(i).getCell(0).toString().compareTo(row1.get(j).getCell(1).toString())==0)
+									  {
+										  strValue=row1.get(j).getCell(2).toString();
+										  
+										  switch(row1.get(j).getCell(2).getCellTypeEnum()){
+										     
+										     case NUMERIC: 
+										    	 strValue=String.valueOf(row1.get(j).getCell(2).getNumericCellValue());
+										    	 break;
+										     case STRING:
+										    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+										    	 break;
+										     case BOOLEAN:
+										    	 strValue=String.valueOf(row1.get(j).getCell(2).getBooleanCellValue());
+										    	 break;
+										     default:
+										    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+										    	 break;
+										     }
+										     
+									  }
+									}
+								}
+						 
+						 }
+						 
+						
+							
+							if(row.get(i).getCell(10)!=null)
+							{
+									
+								
+								String strControlTypeKey=row.get(i).getCell(10).toString();
+
+								if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
+									if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
+										click_element(driver, "id", strControl); 
+										Thread.sleep(2000);
+									}
+									
+									if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
+										
+										dropdown(driver, "id", strControl, strValue);
+										Thread.sleep(2000);															
+									}
+
+									
+
+									if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
+										sendkeys(driver, "id", strControl, strValue); 
+										Thread.sleep(2000);
+									}
+
+									if (strControlTypeKey.compareTo("Alert_accept") == 0) {
+										click_element(driver, "id", strControl); 
+										Alert(driver);
+										Thread.sleep(2000);
+									}
+									
+									
+									if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
+										clear_element(driver, "id", strControl); 																										
+										Thread.sleep(2000);
+									}
+									
+									if (strControlTypeKey.compareTo("Gettext_Ctrl") == 0) {
+										gettext(driver,"xpath", strControl);
+					                      Thread.sleep(2000);
+										
+										
+										}
+									
+									if (strControlTypeKey.compareTo("ImageClick_Ctrl") == 0) {
+										
+										 WebElement e = driver.findElement(By.xpath(strControl));   // Certificate Inspection 
+							             JavascriptExecutor exe = (JavascriptExecutor) driver;
+							             exe.executeScript("arguments[0].click();", e);
+							             Thread.sleep(2000);
+									/*ImageClick_element(driver, "xpath", strControl );
+									Thread.sleep(2000);*/
+									}	
+							}
+					}
+					}
+					}}
 			
-			 
+			
+		/*	 
 		dropdownCheckbox(driver,"id", "ctl00_MainContent_DDLFleet_imgCollapseExpandDDL","ctl00_MainContent_DDLFleet_CheckBoxListItems_1","ctl00_MainContent_DDLFleet_btnApplyFilter");// Dropdown -->Fleet -->Fleet-B
 		Thread.sleep(1000);
 			 
@@ -122,18 +304,7 @@ public class SetItemsMinMaxQty extends RW{
              exe2.executeScript("arguments[0].click();", e2);
              Thread.sleep(2000);
              
-			/* 							
-			 click_element(driver, "xpath",".//*[@id='dvChangeMinmaxQty_M']/table/tbody/tr[4]/td/img[1]"); //Click on save
-			 Thread.sleep(4000);*/
-			 
-			 
-			/* 
-			 dropdownCheckbox(driver, "id","ctl00_MainContent_DDLFleet_imgCollapseExpandDDL", "ctl00_MainContent_DDLFleet_CheckBoxListItems_2","ctl00_MainContent_DDLFleet_btnApplyFilter");//Fleet
-			 Thread.sleep(2000);*/
-			/* 
-			 dropdownCheckbox(driver, "id","ctl00_MainContent_DDLVessel_imgCollapseExpandDDL", "ctl00_MainContent_DDLVessel_CheckBoxListItems_1","ctl00_MainContent_DDLVessel_btnApplyFilter");//Vessel
-			 Thread.sleep(2000);
-			 */
+			
 			 radioButton(driver,"id",(data.getData(5,74,2)));//Department Type:
 			 Thread.sleep(2000);
 			 
@@ -157,4 +328,4 @@ public class SetItemsMinMaxQty extends RW{
 			 click_element(driver, "id",(data.getData(5,83,2))); //Click on Export to  Excel
 			 Thread.sleep(2000);
 }
-}
+}*/

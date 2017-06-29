@@ -21,7 +21,7 @@ public class ItemCategoryTest extends WebDriverPass{
 	ItemCategory w = new ItemCategory();
 	
 
-   @Test(priority=33)
+   @Test(priority=29)
   public void ItemCategory() throws Exception {
 	   test=report.startTest("Item Category");	  
 	   w.ItemCategorys(driver);
@@ -30,7 +30,7 @@ public class ItemCategoryTest extends WebDriverPass{
 	  System.out.println("Item Category URL open successfully");
   }
    
-   @Test(priority=34)
+   @Test(priority=30)
    public void AddNewCategory() throws Exception {
  	   test=report.startTest("Add New Category");	  
  	   w.AddNewCategory(driver);
@@ -41,24 +41,24 @@ public class ItemCategoryTest extends WebDriverPass{
    }
     
    
-   @Test(priority=35)
+   @Test(priority=31)
    public void EditNewCategory() throws Exception {
  	   test=report.startTest("Edit New Category");	  
  	   w.EditNewCategory(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Purchase-->Admin-->Edit New Category"); 
- 	 System.out.println("Positive Test Case for Edit New Category is executed successfully ");
- 	 System.out.println("Negative Test Case for Edit New Category is executed successfully ");
+ 	 System.out.println("Edit New Category is executed successfully ");
+ 	 
    }
    
-   @Test(priority=36)
+   @Test(priority=32)
    public void DeleteCategory() throws Exception {
  	   test=report.startTest("Delete Category");	  
  	   w.DeleteCategory(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Purchase-->Admin-->Delete Category"); 
- 	 System.out.println("Positive Test Case for Delete Category is executed successfully ");
- 	 System.out.println("Negative Test Case for Delete Category is executed successfully ");
+ 	 System.out.println("Delete Category is executed successfully ");
+ 	 
    }
 
    @AfterMethod

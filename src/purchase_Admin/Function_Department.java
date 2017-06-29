@@ -164,14 +164,9 @@ public class Function_Department extends RW{
 							}
 
 							if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
-								try{
-								dropdown(driver, "id", strControl, strValue);
-								Thread.sleep(2000);
-								}
-			                    catch(Exception e) {  
-			                    	System.out.println("Dropdown_Null_value");
-							        }
 								
+								dropdown(driver, "id", strControl, strValue);
+								Thread.sleep(2000);															
 							}
 
 							if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {

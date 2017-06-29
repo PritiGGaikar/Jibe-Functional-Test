@@ -37,7 +37,7 @@ public class UnitPackingsTest extends WebDriverPass{
  	   test=report.startTest("Add Unit Packing");	  
  	   w.AddUnitPacking(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Add Unit Packing"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Add Unit Packing"); 
  	 System.out.println("Positive Test Case for Add Unit Packing is executed successfully ");
  	 System.out.println("Negative Test Case for Add Unit Packing is executed successfully ");
    }
@@ -49,8 +49,8 @@ public class UnitPackingsTest extends WebDriverPass{
  	   w.EditUnitPacking(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Purchase-->Admin-->Edit Unit Packing"); 
- 	 System.out.println("Positive Test Case for Edit Unit Packing is executed successfully ");
- 	 System.out.println("Negative Test Case for Edit Unit Packing is executed successfully ");
+ 	 System.out.println("Edit Unit Packing is executed successfully ");
+ 	
    }
    
    @Test(priority=14)
@@ -59,13 +59,9 @@ public class UnitPackingsTest extends WebDriverPass{
  	   w.DeletetUnitPacking(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Purchase-->Admin-->Delete Unit Packing"); 
- 	 System.out.println("Positive Test Case for Delete Unit Packing is executed successfully ");
- 	 System.out.println("Negative Test Case for Delete Unit Packing is executed successfully ");
+ 	 System.out.println("Delete Unit Packing is executed successfully ");
+ 	
    }
-   
-   
-   
-   
    
    
    

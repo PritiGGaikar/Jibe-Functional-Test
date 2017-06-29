@@ -3,6 +3,7 @@ package common_Function;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -509,52 +510,83 @@ public class RW
     	         break;
 
     	   }
-    	  /*public static String gettext(WebDriver driver, String locatorType, String locatorvalue ,String pamarValue) throws Exception
-     	 
-     	 {
-     	 String Value;
-     	  switch(locatorType)
-     	   {
-
-     	   case "id":
-     	        
-     	          Value=driver.findElement(By.id(locatorvalue)).getText();
-     	         // System.out.println(Value);
-     	          break;
-
-     	   case "name":
-     		   
-     		     Value=  driver.findElement(By.name(locatorvalue)).getText();
-     		    // System.out.println(Value);
-     	         break;
-
-     	   case "xpath":
-     		    
-     		     Value=  driver.findElement(By.xpath(locatorvalue)).getText();
-     		    // System.out.println(Value);
-     	         break;
-     	         
-     	   case "linkText":
-     		   
-     		     Value=    driver.findElement(By.linkText(locatorvalue)).getText();
-     		    // System.out.println(Value);
-     		     
-     	         break;
-
-     	   }
-    	  */
     	 
 
     	   Thread.sleep(1000);
     	   
     	   return null;
 
-    	 }
+    	/* }
+    	public static String ImageClick_element(WebDriver driver, String locatorType, String locatorvalue ) throws Exception
+   	 
+    	 
+   	 {
+   	 
+   	  switch(locatorType)
+   	   {
+
+   	   case "id":
+   		     WebElement  Image1=driver.findElement(By.id(locatorvalue));
+   		  JavascriptExecutor exe1 = (JavascriptExecutor) driver;
+          exe1.executeScript("arguments[0].click();",Image1);
+        
+   	          break;
+
+   	   case "name":
+   		     WebElement Image2=driver.findElement(By.name(locatorvalue));
+   		     JavascriptExecutor exe2 = (JavascriptExecutor) driver;
+             exe2.executeScript("arguments[0].click();",Image2);
+         
+   		    
+   	         break;
+
+    	case "xpath": 
+            WebElement Image3=driver.findElement(By.xpath(locatorvalue));
+   		   
+            JavascriptExecutor exe3 = (JavascriptExecutor) driver;
+            exe3.executeScript("arguments[0].click();", Image3);
+           
+            break;
+   	        
+   	     
+   	   case "linkText":
+   		     WebElement Image4=driver.findElement(By.linkText(locatorvalue));
+   		  JavascriptExecutor exe4 = (JavascriptExecutor) driver;
+          exe4.executeScript("arguments[0].click();", Image4);
+         
+   	         break;
+   	         
+   	   case "cssSelector":
+   		     WebElement Image5=driver.findElement(By.cssSelector(locatorvalue));
+   		   
+   		  JavascriptExecutor exe5 = (JavascriptExecutor) driver;
+          exe5.executeScript("arguments[0].click();", Image5);
+         
+   	         break;
+
+
+	   }*/
+	 
+
+	 
+	   
+
+   	   
+   	  
+   	 }
+   	
+   	 /*{
+   	 
     	
+    	 WebElement e = driver.findElement(By.xpath(locatorvalue));   // Certificate Inspection 
+         JavascriptExecutor exe = (JavascriptExecutor) driver;
+         exe.executeScript("arguments[0].click();", e);
+         Thread.sleep(2000);
+		return null;
+         
 
 
-
-
+	 }*/
 
 
 

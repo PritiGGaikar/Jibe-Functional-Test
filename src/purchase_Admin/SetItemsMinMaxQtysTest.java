@@ -5,14 +5,12 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
 import common_Function.WebDriverPass;
 import purchase_Admin.SetItemsMinMaxQty;
-import quality_Admin.FormTypeLibrary;
+
 
 
 
@@ -25,18 +23,20 @@ public class SetItemsMinMaxQtysTest extends WebDriverPass{
 	
 
    @Test(priority=9)
-  public void MinMaxQuantity() throws InterruptedException {
-	   test=report.startTest("Min Max Quantity");	  
+  public void MinMaxQuantity() throws Exception {
+	   test=report.startTest("Min Max Quantity");	
 	   w.MinMaxQuantity(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Min Max Quantity"); 
+	   test.log(LogStatus.PASS, "Purchase-->Admin-->Min Max Quantity"); 
+		  System.out.println("Set Items Min Max Quantity URL open successfully");
   }
    @Test(priority=10)
    public void CatalogueItem() throws Exception {
  	   test=report.startTest("Catalogue Item");	  
  	   w.CatalogueItem(driver);
  	   Assert.assertTrue(true);
- 	  test.log(LogStatus.PASS, "Catalogue Item"); 
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Catalogue Item"); 
+ 	 System.out.println("Catalogue Item Method is executed successfully ");
    }
   
    

@@ -1,85 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="102063" started-at="2017-06-27T06:06:08Z" finished-at="2017-06-27T06:07:50Z">
+  <suite name="Default suite" duration-ms="52865" started-at="2017-06-28T10:43:12Z" finished-at="2017-06-28T10:44:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="102063" started-at="2017-06-27T06:06:08Z" finished-at="2017-06-27T06:07:50Z">
-      <class name="purchase_Admin.UnitPackingsTest">
-        <test-method status="PASS" signature="initialioseBrowser()[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="initialioseBrowser" is-config="true" duration-ms="14078" started-at="2017-06-27T11:35:54Z" finished-at="2017-06-27T11:36:08Z">
+    <test name="Default test" duration-ms="52865" started-at="2017-06-28T10:43:12Z" finished-at="2017-06-28T10:44:05Z">
+      <class name="purchase_Admin.LocationTest">
+        <test-method status="PASS" signature="initialioseBrowser()[pri:0, instance:purchase_Admin.LocationTest@26425897]" name="initialioseBrowser" is-config="true" duration-ms="14210" started-at="2017-06-28T16:12:58Z" finished-at="2017-06-28T16:13:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialioseBrowser -->
-        <test-method status="PASS" signature="beforeSu()[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="beforeSu" is-config="true" duration-ms="59" started-at="2017-06-27T11:36:08Z" depends-on-methods="common_Function.WebDriverPass.initialioseBrowser" finished-at="2017-06-27T11:36:08Z">
+        <test-method status="PASS" signature="beforeSu()[pri:0, instance:purchase_Admin.LocationTest@26425897]" name="beforeSu" is-config="true" duration-ms="95" started-at="2017-06-28T16:13:12Z" depends-on-methods="common_Function.WebDriverPass.initialioseBrowser" finished-at="2017-06-28T16:13:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSu -->
-        <test-method status="PASS" signature="UnitPacking()[pri:11, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="UnitPacking" duration-ms="3514" started-at="2017-06-27T11:36:08Z" finished-at="2017-06-27T11:36:12Z">
+        <test-method status="PASS" signature="Locations()[pri:5, instance:purchase_Admin.LocationTest@26425897]" name="Locations" duration-ms="3687" started-at="2017-06-28T16:13:12Z" finished-at="2017-06-28T16:13:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UnitPacking -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="178" started-at="2017-06-27T11:36:12Z" finished-at="2017-06-27T11:36:12Z">
+        </test-method> <!-- Locations -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.LocationTest@26425897]" name="afterMethod" is-config="true" duration-ms="193" started-at="2017-06-28T16:13:16Z" finished-at="2017-06-28T16:13:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UnitPacking status=SUCCESS method=UnitPackingsTest.UnitPacking()[pri:11, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
+                <![CDATA[[TestResult name=Locations status=SUCCESS method=LocationTest.Locations()[pri:5, instance:purchase_Admin.LocationTest@26425897] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="AddUnitPacking()[pri:12, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="AddUnitPacking" duration-ms="40253" started-at="2017-06-27T11:36:12Z" finished-at="2017-06-27T11:36:52Z">
+        <test-method status="PASS" signature="EditLocation()[pri:7, instance:purchase_Admin.LocationTest@26425897]" name="EditLocation" duration-ms="27709" started-at="2017-06-28T16:13:16Z" finished-at="2017-06-28T16:13:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddUnitPacking -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="60" started-at="2017-06-27T11:36:52Z" finished-at="2017-06-27T11:36:52Z">
+        </test-method> <!-- EditLocation -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.LocationTest@26425897]" name="afterMethod" is-config="true" duration-ms="54" started-at="2017-06-28T16:13:44Z" finished-at="2017-06-28T16:13:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddUnitPacking status=SUCCESS method=UnitPackingsTest.AddUnitPacking()[pri:12, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
+                <![CDATA[[TestResult name=EditLocation status=SUCCESS method=LocationTest.EditLocation()[pri:7, instance:purchase_Admin.LocationTest@26425897] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="EditUnitPacking()[pri:13, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="EditUnitPacking" duration-ms="24737" started-at="2017-06-27T11:36:52Z" finished-at="2017-06-27T11:37:17Z">
+        <test-method status="PASS" signature="DeleteLocation()[pri:8, instance:purchase_Admin.LocationTest@26425897]" name="DeleteLocation" duration-ms="21148" started-at="2017-06-28T16:13:44Z" finished-at="2017-06-28T16:14:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EditUnitPacking -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="55" started-at="2017-06-27T11:37:17Z" finished-at="2017-06-27T11:37:17Z">
+        </test-method> <!-- DeleteLocation -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.LocationTest@26425897]" name="afterMethod" is-config="true" duration-ms="53" started-at="2017-06-28T16:14:05Z" finished-at="2017-06-28T16:14:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=EditUnitPacking status=SUCCESS method=UnitPackingsTest.EditUnitPacking()[pri:13, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
+                <![CDATA[[TestResult name=DeleteLocation status=SUCCESS method=LocationTest.DeleteLocation()[pri:8, instance:purchase_Admin.LocationTest@26425897] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="DeletetUnitPacking()[pri:14, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="DeletetUnitPacking" duration-ms="33191" started-at="2017-06-27T11:37:17Z" finished-at="2017-06-27T11:37:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeletetUnitPacking -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="afterMethod" is-config="true" duration-ms="53" started-at="2017-06-27T11:37:50Z" finished-at="2017-06-27T11:37:50Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=DeletetUnitPacking status=SUCCESS method=UnitPackingsTest.DeletetUnitPacking()[pri:14, instance:purchase_Admin.UnitPackingsTest@5f9b2141] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:purchase_Admin.UnitPackingsTest@5f9b2141]" name="closeBrowser" is-config="true" duration-ms="758" started-at="2017-06-27T11:37:50Z" finished-at="2017-06-27T11:37:51Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:purchase_Admin.LocationTest@26425897]" name="closeBrowser" is-config="true" duration-ms="1344" started-at="2017-06-28T16:14:05Z" finished-at="2017-06-28T16:14:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- purchase_Admin.UnitPackingsTest -->
+      </class> <!-- purchase_Admin.LocationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

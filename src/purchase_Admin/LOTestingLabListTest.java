@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import common_Function.WebDriverPass;
 import purchase_Admin.LOTestingLabList;
-import quality_Admin.FormTypeLibrary;
+
 
 
 
@@ -27,39 +27,38 @@ public class LOTestingLabListTest extends WebDriverPass{
 	
 
    @Test(priority=0)
-  public void LubeOilTestingLabs() throws InterruptedException {
-	   test=report.startTest("Lube Oil Testing Labs");	  
-	   w.LubeOilTestingLabs(driver);
+   public void TestingLabList() throws Exception {
+	   test=report.startTest("TestingLabList");	  
+	   w.TestingLabList(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Lube Oil Testing Labs"); 
+	   System.out.println("Testing Lab List URL Opened Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Testing Lab List"); 
   }
    @Test(priority=1)
    public void AddNewLab() throws Exception {
 	   test=report.startTest("AddNewLab");	  
 	   w.AddNewLab(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Add New Lab"); 
+	   System.out.println("Positive Test Case for Add New Lab is Executed Successfully");
+	   System.out.println("Negative Test Case for Add New Lab is Executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Add New Lab"); 
   }
-   /*@Test(priority=2)
-   public void AddExistingLab() throws Exception {
-	   test=report.startTest("Add Existing Lab");	  
-	   w.AddExistingLab(driver);
-	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "AddExisting Lab"); 
-  }*/
+  
    @Test(priority=3)
    public void EditLab() throws Exception {
 	   test=report.startTest("EditLab");	  
 	   w.EditLab(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Edit Lab"); 
+	   System.out.println("Edit Lab is executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Edit Lab"); 
   }
    @Test(priority=4)
    public void DeleteLab() throws Exception {
 	   test=report.startTest("DeleteLab");	  
 	   w.DeleteLab(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Delete Lab"); 
+	   System.out.println("Delete Lab is executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Delete Lab"); 
   }
    
    @AfterMethod

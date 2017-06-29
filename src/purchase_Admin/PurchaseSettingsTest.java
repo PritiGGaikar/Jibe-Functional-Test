@@ -23,7 +23,7 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	PurchaseSettings w = new PurchaseSettings();
 	
 
-   @Test(priority=22)
+   @Test(priority=20)
   public void PurchaseConfigsettingsURL() throws Exception {
 	   test=report.startTest("Purchase Config settingsURL");	  
 	   w.PurchaseConfigsettingsURL(driver);
@@ -32,7 +32,7 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	  System.out.println("Purchase settings URL open successfully");
 	  
   }
-   @Test(priority=23)
+ /* @Test(priority=21)
    public void PurchaseConfigSetting() throws Exception {
 	   test=report.startTest("Perchase Config Setting");	  
 	   w.PurchaseConfigSetting(driver);
@@ -40,8 +40,9 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Purchase Config Setting");
 	  System.out.println("Positive Test Case for Perchase Config Setting is executed successfully ");
 	  System.out.println("Negative Test Case for Perchase Config Setting is executed successfully ");
-  }
-   @Test(priority=24)
+  }*/
+   
+   @Test(priority=22)
    public void PurchaseMandatory() throws Exception {
 	   test=report.startTest("PurchaseMandatory");	  
 	   w.PurchaseMandatory(driver);
@@ -50,7 +51,7 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	  System.out.println("Positive Test Case for Purchase Mandatory is executed successfully ");
 	  System.out.println("Negative Test Case for Purchase Mandatory is executed successfully ");
   }
-   @Test(priority=25)
+   @Test(priority=23)
    public void CaptureRank() throws Exception {
 	   test=report.startTest("CaptureRank");	  
 	   w.CaptureRank(driver);
@@ -59,7 +60,7 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	  System.out.println("Positive Test Case for Capture Rank is executed successfully ");
 	 	 System.out.println("Negative Test Case for Capture Rank is executed successfully ");
   }
-   @Test(priority=26)
+   @Test(priority=24)
    public void AutomaticRequisition() throws Exception {
 	   test=report.startTest("AutomaticRequisition");	  
 	   w.AutomaticRequisition(driver);

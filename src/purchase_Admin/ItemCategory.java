@@ -3,15 +3,9 @@ package purchase_Admin;
 import java.util.ArrayList;
 
 import org.apache.poi.ss.usermodel.Row;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
 import com.relevantcodes.extentreports.ExtentReports;
-
 import common_Function.RW;
-
 public class ItemCategory  extends RW{
 
 	 
@@ -115,7 +109,7 @@ public class ItemCategory  extends RW{
 
 
 		    
-			for(int i=0;i<row.size();i++)
+	     for(int i=0;i<row.size();i++)
 			{
 				String strValue=""; 
 				String strControl=row.get(i).getCell(2).getStringCellValue();
@@ -128,7 +122,6 @@ public class ItemCategory  extends RW{
 							{
 							  if(row.get(i).getCell(0).toString().compareTo(row1.get(j).getCell(1).toString())==0)
 							  {
-								 // strValue=row1.get(j).getCell(2).toString();
 								  strValue=row1.get(j).getCell(2).toString();
 								  
 								  switch(row1.get(j).getCell(2).getCellTypeEnum()){
@@ -146,6 +139,7 @@ public class ItemCategory  extends RW{
 								    	 strValue=row1.get(j).getCell(2).getStringCellValue();
 								    	 break;
 								     }
+								     
 							  }
 							}
 						}
@@ -161,104 +155,45 @@ public class ItemCategory  extends RW{
 						String strControlTypeKey=row.get(i).getCell(10).toString();
 
 						if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
+							
 							if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
+								
 								click_element(driver, "id", strControl); 
-								Thread.sleep(2000);
+								Thread.sleep(5000);
 							}
 
 							if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
+								
 								dropdown(driver, "id", strControl, strValue);
 								Thread.sleep(2000);
-
-								
+																
 							}
-							/*if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
 
-								String Value = "";
-
-								switch (row.get(i + 1).getCell(2).getCellTypeEnum()) {
-
-								case NUMERIC:
-									Value = String.valueOf(row.get(i + 1).getCell(2).getNumericCellValue());
-									break;
-								case STRING:
-									Value = row.get(i + 1).getCell(2).getStringCellValue();
-									break;
-								case BOOLEAN:
-									Value = String.valueOf(row.get(i + 1).getCell(2).getBooleanCellValue());
-									break;
-								default:
-									Value = row.get(i + 1).getCell(2).getStringCellValue();
-									break;
-								}
-
-								if (Value != "") {
-									sendkeys(driver, "id", strControl, Value);
-
-									Thread.sleep(1000);
-								}
-							}*/
-															
 							if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
+								
 								sendkeys(driver, "id", strControl, strValue); 
-								Thread.sleep(2000);
+								Thread.sleep(4000);
 							}
 
 							if (strControlTypeKey.compareTo("Alert_accept") == 0) {
+								
 								click_element(driver, "id", strControl); 
 								Alert(driver);
-								Thread.sleep(2000);
+								Thread.sleep(4000);
 							}
-							if (strControlTypeKey.compareTo("Url_Ctrl") == 0) {
-								driver.get(strValue); 
-								Thread.sleep(2000);
-
-							}
-
 							
-							if (strControlTypeKey.compareTo("WindowSwitch_Ctrl") == 0) {
-
-								click_element(driver, "id", strControl);
-							 WindowSwitchto(driver);
-							 Thread.sleep(2000);
-							}
-
 							
 							if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
+								
 								clear_element(driver, "id", strControl); 																										
 								Thread.sleep(2000);
 							}
-
-							/*if (strControlTypeKey.compareTo("Gettext_Ctrl") == 0) {
-								 gettext(driver, "xpath", strControl, row.get(i + 1).getCell(2).getStringCellValue());
-			                      Thread.sleep(6000);
-								}*/
-							if (strControlTypeKey.compareTo("DropdownCheckBox_Ctrl") == 0) {
-
-								dropdownCheckbox(driver, "id", strControl,strControl,strControl);
-			                      Thread.sleep(2000);
-							}
-							if (strControlTypeKey.compareTo("FrameSwitch_Ctrl") == 0) {
-
-							 frameSwitchto(driver, "id", strControl);
-			                      Thread.sleep(2000);
-							
-					}
-							if (strControlTypeKey.compareTo("Upload_Ctrl") == 0) {
-							uploadFile(driver,"id", strControl, strControl,strValue, strControl, strControl);
-							   Thread.sleep(2000);
 								
-							}
-							
-							/*if (strControlTypeKey.compareTo("GetAttribute_Ctrl") == 0) {
-
-								 gettext(driver, "xpath", strValue, row.get(i + 1).getCell(2).getStringCellValue());
-			                      Thread.sleep(6000);
-								}*/
 					}
 			}
 			}
 			}
+	 
 	
 	
 	
@@ -267,8 +202,10 @@ public class ItemCategory  extends RW{
 		/*click_element(driver, "id","ctl00_MainContent_ImgAdd"); //Click on Add Category
 		Thread.sleep(2000);	
 		
+		
 		click_element(driver, "id","ctl00_MainContent_ImgSave"); //Click on Save
 		Thread.sleep(2000);	
+		
 		
 		//Alert handling for Please Select the Category Type
 		 Alert alert = driver.switchTo().alert();            //Alert handling for Please Select the Category Type
@@ -388,44 +325,31 @@ public class ItemCategory  extends RW{
 							if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
 								if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
 									click_element(driver, "id", strControl); 
-									Thread.sleep(2000);
+									Thread.sleep(4000);
 								}
 
 								if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
-									try{
+								
 									dropdown(driver, "id", strControl, strValue);
 									Thread.sleep(2000);
-									}
-				                    catch(Exception e) {  
-				                    	System.out.println("Dropdown_Null_value");
-								        }
+									
 									
 								}
 
 								if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
 									sendkeys(driver, "id", strControl, strValue); 
-									Thread.sleep(2000);
+									Thread.sleep(4000);
 								}
 
 								if (strControlTypeKey.compareTo("Alert_accept") == 0) {
 									click_element(driver, "id", strControl); 
 									Alert(driver);
-									Thread.sleep(2000);
+									Thread.sleep(4000);
 								}
-								if (strControlTypeKey.compareTo("Url_Ctrl") == 0) {
-									driver.get(strValue); 
-									Thread.sleep(2000);
-
-								}
+								
 
 								
-								if (strControlTypeKey.compareTo("WindowSwitch_Ctrl") == 0) {
-
-									click_element(driver, "id", strControl);
-								 WindowSwitchto(driver);
-								 Thread.sleep(2000);
-								}
-
+								
 								
 								if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
 									clear_element(driver, "id", strControl); 																										
@@ -433,17 +357,7 @@ public class ItemCategory  extends RW{
 								}
 
 								
-								if (strControlTypeKey.compareTo("DropdownCheckBox_Ctrl") == 0) {
-
-									dropdownCheckbox(driver, "id", strControl,strControl,strControl);
-				                      Thread.sleep(2000);
-								}
-								if (strControlTypeKey.compareTo("FrameSwitch_Ctrl") == 0) {
-
-								 frameSwitchto(driver, "id", strControl);
-				                      Thread.sleep(2000);
 								
-						}
 						}
 				}
 				}

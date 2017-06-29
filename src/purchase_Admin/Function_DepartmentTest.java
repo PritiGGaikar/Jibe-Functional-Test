@@ -21,7 +21,7 @@ public class Function_DepartmentTest extends WebDriverPass{
 	Function_Department w = new Function_Department();
 	
 
-   @Test(priority=29)
+   @Test(priority=25)
   public void FunctionDepartment() throws Exception {
 	   test=report.startTest("Function Department");	  
 	   w.FunctionDepartment(driver);
@@ -29,7 +29,7 @@ public class Function_DepartmentTest extends WebDriverPass{
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Function Department"); 
 	  System.out.println("Function Department URL open successfully");
   }
-   @Test(priority=30)
+   @Test(priority=26)
  
    public void AddFunctionDepartment() throws Exception {
  	   test=report.startTest("Add Function Department");	  
@@ -40,7 +40,7 @@ public class Function_DepartmentTest extends WebDriverPass{
  	 System.out.println("Negative Test Case for Add Function Department is executed successfully ");
    }
    
-   @Test(priority=31)
+   @Test(priority=27)
    
    public void EditFunctionDepartment() throws Exception {
  	   test=report.startTest("Edit Function Department");	  
@@ -51,7 +51,7 @@ public class Function_DepartmentTest extends WebDriverPass{
  	 System.out.println("Negative Test Case for Edit Function Department is executed successfully ");
    }
    
- @Test(priority=32)
+ @Test(priority=28)
    
    public void DeleteFunctionDepartment() throws Exception {
  	   test=report.startTest("Delete Function Department");	  

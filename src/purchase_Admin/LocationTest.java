@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import common_Function.WebDriverPass;
 import purchase_Admin.Location;
-import quality_Admin.FormTypeLibrary;
+
 
 public class LocationTest extends WebDriverPass{
 
@@ -23,32 +23,37 @@ public class LocationTest extends WebDriverPass{
 	
 
    @Test(priority=5)
-  public void Locations() throws InterruptedException {
-	   test=report.startTest("Locations");	  
+   public void Locations() throws Throwable {
+	   test=report.startTest("Location URL");	  
 	   w.Locations(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Locations"); 
+	   System.out.println("Location URL Opened Successfully");	   
+	   test.log(LogStatus.PASS, "Purchase->Admin->Location URL"); 
   }
-    @Test(priority=6)
-   public void AddNewLocation() throws Exception {
-	   test=report.startTest("AddNewLocation");	  
-	   w.AddNewLocation(driver);
-	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Add New Location"); 
-  }
+    /*@Test(priority=6)
+    public void AddNewLocation() throws Exception {
+ 	   test=report.startTest("Add New Location");	  
+ 	   w.AddNewLocation(driver);
+ 	   Assert.assertTrue(true);
+ 	   System.out.println("Positive Test Case for Add New Location is Executed Successfully");
+ 	   System.out.println("Negative Test Case for Add New Location is Executed Successfully");
+ 	  test.log(LogStatus.PASS, "Purchase->Admin->Add New Location"); 
+  }*/
    @Test(priority=7)
    public void EditLocation() throws Exception {
 	   test=report.startTest("EditLocation");	  
 	   w.EditLocation(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Edit Location"); 
+	   System.out.println("Edit Location is executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Edit Location"); 
   }
    @Test(priority=8)
    public void DeleteLocation() throws Exception {
 	   test=report.startTest("DeleteLocation");	  
 	   w.DeleteLocation(driver);
 	   Assert.assertTrue(true);
-	  test.log(LogStatus.PASS, "Delete Location"); 
+	   System.out.println("Delete Location is executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Delete Location"); 
   }
    @AfterMethod
   	public void afterMethod(ITestResult result) {
