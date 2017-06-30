@@ -21,7 +21,7 @@ public class ItemCategoryTest extends WebDriverPass{
 	ItemCategory w = new ItemCategory();
 	
 
-   @Test(priority=29)
+   @Test(priority=34)
   public void ItemCategory() throws Exception {
 	   test=report.startTest("Item Category");	  
 	   w.ItemCategorys(driver);
@@ -29,19 +29,28 @@ public class ItemCategoryTest extends WebDriverPass{
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Item Category"); 
 	  System.out.println("Item Category URL open successfully");
   }
+   @Test(priority=35)
+   public void NegativeTestAddNewCategory() throws Exception {
+ 	   test=report.startTest("Negative Test Add New Category");	  
+ 	   w.NegativeTestAddNewCategory(driver);
+ 	   Assert.assertTrue(true);
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Negative Test Add New Category"); 
+ 	 System.out.println("Negative Test Case for Add New Category is executed successfully ");
+   }
+    
    
-   @Test(priority=30)
+   @Test(priority=36)
    public void AddNewCategory() throws Exception {
  	   test=report.startTest("Add New Category");	  
  	   w.AddNewCategory(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Purchase-->Admin-->Add New Category"); 
  	 System.out.println("Positive Test Case for Add New Category is executed successfully ");
- 	 System.out.println("Negative Test Case for Add New Category is executed successfully ");
+ 	
    }
     
    
-   @Test(priority=31)
+   @Test(priority=37)
    public void EditNewCategory() throws Exception {
  	   test=report.startTest("Edit New Category");	  
  	   w.EditNewCategory(driver);
@@ -51,7 +60,7 @@ public class ItemCategoryTest extends WebDriverPass{
  	 
    }
    
-   @Test(priority=32)
+   @Test(priority=38)
    public void DeleteCategory() throws Exception {
  	   test=report.startTest("Delete Category");	  
  	   w.DeleteCategory(driver);
@@ -75,7 +84,7 @@ public class ItemCategoryTest extends WebDriverPass{
  }
   @BeforeSuite
   public void beforeSu() {
-	   report = UnitPackings.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
+	   report = LOTestingLabList.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
   
 /*  @AfterSuite
  public void afterSu() {

@@ -21,7 +21,7 @@ public class PurchaseQuestionnaireTest extends WebDriverPass{
 	
 
 
-	   @Test(priority=15)
+	   @Test(priority=17)
 	   public void PurchaseQuestionnaire() throws Exception {
 		   test=report.startTest("Purchase Questionnaire");	  
 		   w.PurchaseQuestionnair(driver);
@@ -30,19 +30,26 @@ public class PurchaseQuestionnaireTest extends WebDriverPass{
 		  test.log(LogStatus.PASS, "Purchase->Admin->Purchase Questionnaire"); 
 	  }
 	   
-	  
+
+	   @Test(priority=18)
+	   public void NegativeTestAddNewQuestion() throws Exception {
+	 	   test=report.startTest("Negative TestAdd New Question");	  
+	 	   w.NegativeTestAddNewQuestion(driver);
+	 	   Assert.assertTrue(true);	 	 
+		  System.out.println("Negative Test Case for Add New Question is Executed Successfully");
+	 	  test.log(LogStatus.PASS, "Purchase->Admin->Negative Test Add New Question"); 
+	   }
 	   
-	   @Test(priority=16)
+	   @Test(priority=19)
 	   public void AddNewQuestion() throws Exception {
 	 	   test=report.startTest("Add New Question");	  
 	 	   w.AddNewQuestion(driver);
 	 	   Assert.assertTrue(true);
 	 	  System.out.println("Positive Test Case for Add New Question is Executed Successfully");
-		  System.out.println("Negative Test Case for Add New Question is Executed Successfully");
 	 	  test.log(LogStatus.PASS, "Purchase->Admin->Add New Question"); 
 	   }
 	   
-	  @Test(priority=17)
+	  @Test(priority=20)
 	   public void DeleteNewQuestion() throws Exception {
 	 	   test=report.startTest("Delete New Added Question");	  
 	 	   w.DeleteNewQuestion(driver);
@@ -50,19 +57,27 @@ public class PurchaseQuestionnaireTest extends WebDriverPass{
 	 	  System.out.println("Delete New Question is executed Successfully");
 	 	  test.log(LogStatus.PASS, "Purchase->Admin->Delete New Added Question"); 
 	   }
+	  
+	  @Test(priority=21)
+	   public void NegativeTestAddNewGrade() throws Exception {
+	 	   test=report.startTest("Negative TestAdd New Grade");	  
+	 	   w.NegativeTestAddNewGrade(driver);
+	 	   Assert.assertTrue(true); 	
+		  System.out.println("Negative Test Case for Add New Grade is Executed Successfully");
+	 	  test.log(LogStatus.PASS, "Purchase->Admin->Negative Test Add New Grade"); 
+	   }
 	   
-	 @Test(priority=18)
+	 @Test(priority=22)
 	   public void AddNewGrade() throws Exception {
 	 	   test=report.startTest("Add New Grade");	  
 	 	   w.AddNewGrade(driver);
 	 	   Assert.assertTrue(true);
 	 	  System.out.println("Positive Test Case for Add New Grade is Executed Successfully");
-		  System.out.println("Negative Test Case for Add New Grade is Executed Successfully");
 	 	  test.log(LogStatus.PASS, "Purchase->Admin->Add New Grade"); 
 	   }
 	   
 
-	    @Test(priority=19)
+	    @Test(priority=23)
 	   public void DeleteAddedNewGrade() throws Exception {
 	 	   test=report.startTest("Delete Added New Grade");	  
 	 	   w.DeleteAddedNewGrade(driver);

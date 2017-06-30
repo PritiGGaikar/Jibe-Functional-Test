@@ -27,19 +27,26 @@ public class LocationTest extends WebDriverPass{
 	   test=report.startTest("Location URL");	  
 	   w.Locations(driver);
 	   Assert.assertTrue(true);
-	   System.out.println("Location URL Opened Successfully");	   
+	   System.out.println("Location URL Opened Successfully");	   	   
 	   test.log(LogStatus.PASS, "Purchase->Admin->Location URL"); 
   }
-    /*@Test(priority=6)
+   @Test(priority=6)
+   public void NegativeTestCaseAddNewLocation() throws Exception {
+	   test=report.startTest("Negative Test Case Add New Location");	  
+	   w.NegativeTestCaseAddNewLocation(driver);
+	   Assert.assertTrue(true);	 
+	   System.out.println("Negative Test Case for Add New Location is Executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Negative Test Case Add New Location"); 
+ }
+    @Test(priority=7)
     public void AddNewLocation() throws Exception {
  	   test=report.startTest("Add New Location");	  
  	   w.AddNewLocation(driver);
  	   Assert.assertTrue(true);
- 	   System.out.println("Positive Test Case for Add New Location is Executed Successfully");
- 	   System.out.println("Negative Test Case for Add New Location is Executed Successfully");
- 	  test.log(LogStatus.PASS, "Purchase->Admin->Add New Location"); 
-  }*/
-   @Test(priority=7)
+ 	   System.out.println("Positive Test Case for Add New Location is Executed Successfully"); 	
+ 	   test.log(LogStatus.PASS, "Purchase->Admin->Add New Location"); 
+  }
+   @Test(priority=8)
    public void EditLocation() throws Exception {
 	   test=report.startTest("EditLocation");	  
 	   w.EditLocation(driver);
@@ -47,7 +54,7 @@ public class LocationTest extends WebDriverPass{
 	   System.out.println("Edit Location is executed Successfully");
 	  test.log(LogStatus.PASS, "Purchase->Admin->Edit Location"); 
   }
-   @Test(priority=8)
+   @Test(priority=9)
    public void DeleteLocation() throws Exception {
 	   test=report.startTest("DeleteLocation");	  
 	   w.DeleteLocation(driver);

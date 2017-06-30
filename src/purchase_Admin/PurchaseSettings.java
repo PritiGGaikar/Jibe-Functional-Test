@@ -112,7 +112,7 @@ public class PurchaseSettings extends RW{
 		 	
 
 
-			    
+
 				for(int i=0;i<row.size();i++)
 				{
 					String strValue=""; 
@@ -158,31 +158,36 @@ public class PurchaseSettings extends RW{
 							
 							String strControlTypeKey=row.get(i).getCell(10).toString();
 
-							
+							if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
 								if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
 									click_element(driver, "id", strControl); 
-									Thread.sleep(4000);
+									Thread.sleep(2000);
 								}
 
-								
+								if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
+									sendkeys(driver, "id", strControl, strValue); 
+									Thread.sleep(2000);
+								}
 
 								if (strControlTypeKey.compareTo("Alert_accept") == 0) {
 									click_element(driver, "id", strControl); 
+									Thread.sleep(2000);
 									Alert(driver);
 									Thread.sleep(2000);
 								}
-								if (strControlTypeKey.compareTo("Chechbox_Ctrl") == 0) {
-									checkbox_element(driver, "id", strControl); 
-									Thread.sleep(2000);
-								}
-																			
+								
+							
 								if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
 									clear_element(driver, "id", strControl); 																										
 									Thread.sleep(2000);
 								}
 
+								if (strControlTypeKey.compareTo("Chechbox_Ctrl") == 0) {
+									checkbox_element(driver, "id", strControl); 
+									Thread.sleep(2000);
+								}
 								
-						
+						}
 				}
 				}
 				}
@@ -250,19 +255,11 @@ public class PurchaseSettings extends RW{
 							if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
 								if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
 									click_element(driver, "id", strControl); 
-									Thread.sleep(4000);
+									Thread.sleep(2000);
 								}
 
-								if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
-									try{
-									dropdown(driver, "id", strControl, strValue);
-									Thread.sleep(2000);
-									}
-				                    catch(Exception e) {  
-				                    	System.out.println("Dropdown_Null_value");
-								        }
-									
-								}
+								
+							
 
 								if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
 									sendkeys(driver, "id", strControl, strValue); 
@@ -271,32 +268,17 @@ public class PurchaseSettings extends RW{
 
 								if (strControlTypeKey.compareTo("Alert_accept") == 0) {
 									click_element(driver, "id", strControl); 
+									Thread.sleep(4000);
 									Alert(driver);
-									Thread.sleep(3000);
+									Thread.sleep(4000);
 								}
-								if (strControlTypeKey.compareTo("Url_Ctrl") == 0) {
-									driver.get(strValue); 
-									Thread.sleep(2000);
-
-								}
-
 								if (strControlTypeKey.compareTo("Chechbox_Ctrl") == 0) {
 									checkbox_element(driver, "id", strControl); 
 									Thread.sleep(2000);
 								}
-
 								
-								if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
-									clear_element(driver, "id", strControl); 																										
-									Thread.sleep(2000);
-								}
-
 								
-								if (strControlTypeKey.compareTo("DropdownCheckBox_Ctrl") == 0) {
 
-									dropdownCheckbox(driver, "id", strControl,strControl,strControl);
-				                      Thread.sleep(2000);
-								}
 								
 							
 						}

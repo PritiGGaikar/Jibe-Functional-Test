@@ -22,7 +22,7 @@ public class UnitPackingsTest extends WebDriverPass{
 	UnitPackings w = new UnitPackings();
 	
 
-   @Test(priority=11)
+   @Test(priority=12)
    public void UnitPacking() throws Exception {
 	   test=report.startTest("Unit Packing URL");	  
 	   w.UnitPacking(driver);
@@ -31,19 +31,29 @@ public class UnitPackingsTest extends WebDriverPass{
 	  System.out.println("Unit Packing URL open successfully");
 	  
   }
+   @Test(priority=13)
+   public void NegativeTestAddUnitPacking() throws Exception {
+ 	   test=report.startTest("Negative Test Case Add Unit Packing");	  
+ 	   w.NegativeTestAddUnitPacking(driver);
+ 	   Assert.assertTrue(true);
+ 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Negative Test Case Add Unit Packing"); 
+ 	
+ 	 System.out.println("Negative Test Case for Add Unit Packing is executed successfully ");
+   }
    
-   @Test(priority=12)
+   
+   @Test(priority=14)
    public void AddUnitPacking() throws Exception {
  	   test=report.startTest("Add Unit Packing");	  
  	   w.AddUnitPacking(driver);
  	   Assert.assertTrue(true);
  	  test.log(LogStatus.PASS, "Purchase-->Admin-->Add Unit Packing"); 
  	 System.out.println("Positive Test Case for Add Unit Packing is executed successfully ");
- 	 System.out.println("Negative Test Case for Add Unit Packing is executed successfully ");
+ 	
    }
    
   
-   @Test(priority=13)
+   @Test(priority=15)
    public void EditUnitPacking() throws Exception {
  	   test=report.startTest("Edit Unit Packing");	  
  	   w.EditUnitPacking(driver);
@@ -53,7 +63,7 @@ public class UnitPackingsTest extends WebDriverPass{
  	
    }
    
-   @Test(priority=14)
+   @Test(priority=16)
    public void DeletetUnitPacking() throws Exception {
  	   test=report.startTest("Delete Unit Packing");	  
  	   w.DeletetUnitPacking(driver);
@@ -62,6 +72,10 @@ public class UnitPackingsTest extends WebDriverPass{
  	 System.out.println("Delete Unit Packing is executed successfully ");
  	
    }
+   
+   
+   
+   
    
    
    
@@ -81,7 +95,7 @@ public class UnitPackingsTest extends WebDriverPass{
  }
   @BeforeSuite
   public void beforeSu() {
-	  report = UnitPackings.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
+	  report = LOTestingLabList.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 }
   
  /* @AfterSuite
  public void afterSu() {

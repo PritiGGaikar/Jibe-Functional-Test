@@ -27,7 +27,7 @@ public class UnitPackings  extends RW{
 	    return report;
 	}
 
-	public void UnitPacking(WebDriver driver1) throws Exception {  //(priority=11)
+	public void UnitPacking(WebDriver driver1) throws Exception {  
 
 		WebDriver driver = driver1;
 		
@@ -106,6 +106,100 @@ public class UnitPackings  extends RW{
 					}}
 			}
 	
+
+	public void NegativeTestAddUnitPacking(WebDriver driver1) throws Exception {  
+
+		WebDriver driver = driver1;
+		
+
+	     ArrayList<Row> row= OR_Purchase_m.searchSheet("NegativeTestAddUnitPacking",2,9);//Functn key,sheetNo.,Column no.// Xpath locator
+
+	     ArrayList<Row> row1=input_purc_m.searchSheet("NegativeTestAddUnitPacking",2,0);//Functn key, sheet no,//test data excel
+	 	
+	    
+	    
+	    
+
+
+			for(int i=0;i<row.size();i++)
+			{
+				String strValue=""; 
+				String strControl=row.get(i).getCell(2).getStringCellValue();
+				 for(int j=0;j<row1.size();j++)
+				 {
+					 if(row.get(i).getCell(0)!=null)
+						{
+						
+						 	if(row1.get(j).getCell(1)!=null)
+							{
+							  if(row.get(i).getCell(0).toString().compareTo(row1.get(j).getCell(1).toString())==0)
+							  {
+								  strValue=row1.get(j).getCell(2).toString();
+								  
+								  switch(row1.get(j).getCell(2).getCellTypeEnum()){
+								     
+								     case NUMERIC: 
+								    	 strValue=String.valueOf(row1.get(j).getCell(2).getNumericCellValue());
+								    	 break;
+								     case STRING:
+								    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+								    	 break;
+								     case BOOLEAN:
+								    	 strValue=String.valueOf(row1.get(j).getCell(2).getBooleanCellValue());
+								    	 break;
+								     default:
+								    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+								    	 break;
+								     }
+								     
+							  }
+							}
+						}
+				 
+				 }
+				 
+				
+					
+					if(row.get(i).getCell(10)!=null)
+					{
+							
+						
+						String strControlTypeKey=row.get(i).getCell(10).toString();
+
+						if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
+							if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
+								click_element(driver, "id", strControl); 
+								Thread.sleep(2000);
+							}
+
+							if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
+								sendkeys(driver, "id", strControl, strValue); 
+								Thread.sleep(2000);
+							}
+
+							if (strControlTypeKey.compareTo("Alert_accept") == 0) {
+								click_element(driver, "id", strControl); 
+								Alert(driver);
+								Thread.sleep(2000);
+							}
+							
+						
+							if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
+								clear_element(driver, "id", strControl); 																										
+								Thread.sleep(2000);
+							}
+
+							if (strControlTypeKey.compareTo("Chechbox_Ctrl") == 0) {
+								checkbox_element(driver, "id", strControl); 
+								Thread.sleep(2000);
+							}
+							
+					}
+			}
+			}
+			}
+	
+	
 	
 	
 	
@@ -113,7 +207,7 @@ public class UnitPackings  extends RW{
 		
 	
 
-	public void AddUnitPacking(WebDriver driver1) throws Exception {  //(priority=12)
+	public void AddUnitPacking(WebDriver driver1) throws Exception {  
 
 		WebDriver driver = driver1;
 		
@@ -195,7 +289,10 @@ public class UnitPackings  extends RW{
 								Thread.sleep(2000);
 							}
 
-							
+							if (strControlTypeKey.compareTo("Chechbox_Ctrl") == 0) {
+								checkbox_element(driver, "id", strControl); 
+								Thread.sleep(2000);
+							}
 							
 					}
 			}

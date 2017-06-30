@@ -98,6 +98,103 @@ public class ItemCategory  extends RW{
 			}
 	
 
+	public void NegativeTestAddNewCategory(WebDriver driver1) throws Exception {  //(priority=34)
+
+		WebDriver driver = driver1;
+		           
+		 ArrayList<Row> row= OR_Purchase_m.searchSheet("NegativeTestAddNewCategory",2,9);//Functn key,sheetNo.,Column no.// Xpath locator
+	     ArrayList<Row> row1=input_purc_m.searchSheet("NegativeTestAddNewCategory", 2,0);//Functn key, sheet no,//test data excel
+	 	
+
+
+
+		    
+	     for(int i=0;i<row.size();i++)
+			{
+				String strValue=""; 
+				String strControl=row.get(i).getCell(2).getStringCellValue();
+				 for(int j=0;j<row1.size();j++)
+				 {
+					 if(row.get(i).getCell(0)!=null)
+						{
+						
+						 	if(row1.get(j).getCell(1)!=null)
+							{
+							  if(row.get(i).getCell(0).toString().compareTo(row1.get(j).getCell(1).toString())==0)
+							  {
+								  strValue=row1.get(j).getCell(2).toString();
+								  
+								  switch(row1.get(j).getCell(2).getCellTypeEnum()){
+								     
+								     case NUMERIC: 
+								    	 strValue=String.valueOf(row1.get(j).getCell(2).getNumericCellValue());
+								    	 break;
+								     case STRING:
+								    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+								    	 break;
+								     case BOOLEAN:
+								    	 strValue=String.valueOf(row1.get(j).getCell(2).getBooleanCellValue());
+								    	 break;
+								     default:
+								    	 strValue=row1.get(j).getCell(2).getStringCellValue();
+								    	 break;
+								     }
+								     
+							  }
+							}
+						}
+				 
+				 }
+				 
+				
+					
+					if(row.get(i).getCell(10)!=null)
+					{
+							
+						
+						String strControlTypeKey=row.get(i).getCell(10).toString();
+
+						if (strControlTypeKey.compareTo("Value_Ctrl") != 0) {
+							
+							if (strControlTypeKey.compareTo("Click_Ctrl") == 0) {
+								
+								click_element(driver, "id", strControl); 
+								Thread.sleep(5000);
+							}
+
+							if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
+								
+								dropdown(driver, "id", strControl, strValue);
+								Thread.sleep(2000);
+																
+							}
+
+							if (strControlTypeKey.compareTo("SendKey_Ctrl") == 0) {
+								
+								sendkeys(driver, "id", strControl, strValue); 
+								Thread.sleep(4000);
+							}
+
+							if (strControlTypeKey.compareTo("Alert_accept") == 0) {
+								
+								click_element(driver, "id", strControl); 
+								Thread.sleep(2000);
+								Alert(driver);
+								Thread.sleep(4000);
+							}
+							
+							
+							if (strControlTypeKey.compareTo("Clear_Ctrl") == 0) {
+								
+								clear_element(driver, "id", strControl); 																										
+								Thread.sleep(2000);
+							}
+								
+					}
+			}
+			}
+			}
+
 	public void AddNewCategory(WebDriver driver1) throws Exception {  //(priority=34)
 
 		WebDriver driver = driver1;
@@ -178,6 +275,7 @@ public class ItemCategory  extends RW{
 							if (strControlTypeKey.compareTo("Alert_accept") == 0) {
 								
 								click_element(driver, "id", strControl); 
+								Thread.sleep(2000);
 								Alert(driver);
 								Thread.sleep(4000);
 							}
@@ -195,76 +293,12 @@ public class ItemCategory  extends RW{
 			}
 	 
 	
+	 
+	
 	
 	
 
 		
-		/*click_element(driver, "id","ctl00_MainContent_ImgAdd"); //Click on Add Category
-		Thread.sleep(2000);	
-		
-		
-		click_element(driver, "id","ctl00_MainContent_ImgSave"); //Click on Save
-		Thread.sleep(2000);	
-		
-		
-		//Alert handling for Please Select the Category Type
-		 Alert alert = driver.switchTo().alert();            //Alert handling for Please Select the Category Type
-	     String Alert = alert.getText();    	   
-	     System.out.println("Alert msg for:"+Alert);
-	     alert.accept();
-	     Thread.sleep(2000);
-	     
-		
-		sendkeys(driver,"id", "ctl00_MainContent_TxtCatName", "JibeCategory"); //Sendkeys for Category Name 
-		Thread.sleep(1000);
-		
-		click_element(driver, "id","ctl00_MainContent_ImgSave"); //Click on Save
-		Thread.sleep(2000);	
-		
-		//Alert handling for Please Select the Category Type
-		 Alert alert1 = driver.switchTo().alert();            //Alert handling for Please Select the Category Type
-	     String Alert1 = alert1.getText();    	   
-	     System.out.println("Alert msg for:"+Alert1);
-	     alert1.accept();
-	     Thread.sleep(2000);
-		
-		 dropdown(driver, "id", "ctl00_MainContent_ddlcatType","ItemCategory");// Dropdown -->Category Type  -->ItemCategory
-		 Thread.sleep(1000);
-		
-		 click_element(driver, "id","ctl00_MainContent_ImgSave"); //Click on Save
-		Thread.sleep(2000);		
-			
-			//Alert handling for Please enter Functions Short Name
-			 Alert alert2= driver.switchTo().alert();            //Alert handling for Please enter Functions Short Name
-		     String Alert2 = alert2.getText();    	   
-		     System.out.println("Alert msg for:"+Alert2);
-		     alert2.accept();
-		     Thread.sleep(2000);
-		
-		sendkeys(driver,"id", "ctl00_MainContent_TxtShrtName", "22"); //Sendkeys for Category Short Code
-		Thread.sleep(1000);
-		
-		click_element(driver, "id","ctl00_MainContent_ImgSave"); //Click on Save
-		Thread.sleep(2000);	
-		
-
-		//Alert handling forItem Category Added
-		 Alert alert3= driver.switchTo().alert();            //Alert handling for Item Category Added
-	     String Alert3 = alert3.getText();    	   
-	     System.out.println("Alert msg for:"+Alert3);
-	     alert3.accept();
-	     Thread.sleep(2000);
-	
-	     //-----------Search Added-----------------//
-	     
-	    click_element(driver, "id","ctl00_MainContent_btnRefresh"); //Click on Refresh
-		Thread.sleep(2000);	
-		
-		sendkeys(driver,"id", "ctl00_MainContent_txtSearchName", "JibeCategory"); //Sendkeys for Item Category Name
-		Thread.sleep(1000);
-		
-		click_element(driver, "id","ctl00_MainContent_btnFilter"); //Click on Search
-		Thread.sleep(2000);	*/
 		
 		public void EditNewCategory(WebDriver driver1) throws Exception {  //(priority=34)
 
@@ -343,6 +377,7 @@ public class ItemCategory  extends RW{
 
 								if (strControlTypeKey.compareTo("Alert_accept") == 0) {
 									click_element(driver, "id", strControl); 
+									Thread.sleep(2000);
 									Alert(driver);
 									Thread.sleep(4000);
 								}
@@ -363,38 +398,6 @@ public class ItemCategory  extends RW{
 				}
 				}
 		
-		/*
-		click_element(driver, "id","ctl00_MainContent_rgdItmCat_ctl02_ImgUpdate"); //Click on Edit
-		Thread.sleep(2000);	
-		
-		clear_element(driver, "id", "ctl00_MainContent_TxtCatName");// Clear Category Name
-		Thread.sleep(1000);
-			
-		sendkeys(driver,"id", "ctl00_MainContent_TxtCatName", "JibeDevelopment"); //Sendkeys for Category Name
-		Thread.sleep(2000);
-		
-		click_element(driver, "id","ctl00_MainContent_ImgSave"); //Click on Save
-		Thread.sleep(3000);
-		
-		//Alert handling for Item Category Updated Successfully
-		 Alert alert3= driver.switchTo().alert();            //Alert handling for Item Category Updated Successfully
-	     String Alert3 = alert3.getText();    	   
-	     System.out.println("Alert msg for:"+Alert3);
-	     alert3.accept();
-	     Thread.sleep(2000);
-	     
-	     //------Search Eddited----------------//
-	     
-	   
-		click_element(driver, "id","ctl00_MainContent_btnRefresh"); //Click on Refresh
-		Thread.sleep(2000);	
-			
-		sendkeys(driver,"id", "ctl00_MainContent_txtSearchName", "JibeDevelopment"); //Sendkeys for Item Category Name
-		Thread.sleep(1000);
-			
-		click_element(driver, "id","ctl00_MainContent_btnFilter"); //Click on Search
-		Thread.sleep(2000);	  
-	}*/
 		public void DeleteCategory(WebDriver driver1) throws Exception {  //(priority=34)
 
 			WebDriver driver = driver1;	
@@ -457,13 +460,10 @@ public class ItemCategory  extends RW{
 								}
 
 								if (strControlTypeKey.compareTo("Dropdown_ctrl") == 0) {
-									try{
+								
 									dropdown(driver, "id", strControl, strValue);
 									Thread.sleep(2000);
-									}
-				                    catch(Exception e) {  
-				                    	System.out.println("Dropdown_Null_value");
-								        }
+									
 									
 								}
 
@@ -474,6 +474,7 @@ public class ItemCategory  extends RW{
 
 								if (strControlTypeKey.compareTo("Alert_accept") == 0) {
 									click_element(driver, "id", strControl); 
+									Thread.sleep(2000);
 									Alert(driver);
 									Thread.sleep(2000);
 									Alert(driver);
@@ -486,6 +487,7 @@ public class ItemCategory  extends RW{
 									clear_element(driver, "id", strControl); 																										
 									Thread.sleep(2000);
 								}
+								
 								if (strControlTypeKey.compareTo("Gettext_Ctrl") == 0) {
 									gettext(driver,"xpath", strControl);
 				                      Thread.sleep(2000);
@@ -501,44 +503,4 @@ public class ItemCategory  extends RW{
 		
 		}
 
-		/*
-		click_element(driver, "id","ctl00_MainContent_rgdItmCat_ctl02_ImgDelete"); //Click on Delete
-		Thread.sleep(2000);	
 		
-		//Alert handling for Are you sure want to delete?
-		 Alert alert3= driver.switchTo().alert();            //Alert handling for Are you sure want to delete?
-	     String Alert3 = alert3.getText();    	   
-	     System.out.println("Alert msg for:"+Alert3);
-	     alert3.accept();
-	     Thread.sleep(2000);
-	     
-	   //Alert handling for Please enter Functions Short Name
-		 Alert alert2= driver.switchTo().alert();            //Alert handling for Please enter Functions Short Name
-	     String Alert2 = alert2.getText();    	   
-	     System.out.println("Alert msg for:"+Alert2);
-	     alert2.accept();
-	     Thread.sleep(2000);
-	     
-	     //------Search Deleted----------------//
-	     
-		   
-		click_element(driver, "id","ctl00_MainContent_btnRefresh"); //Click on Refresh
-		Thread.sleep(2000);	
-				
-		sendkeys(driver,"id", "ctl00_MainContent_txtSearchName", "JibeDevelopment"); //Sendkeys for Item Category Name
-		Thread.sleep(1000);
-				
-		click_element(driver, "id","ctl00_MainContent_btnFilter"); //Click on Search
-		Thread.sleep(2000);	  
-		
-		String Record = driver.findElement(By.xpath(".//*[@id='ctl00_MainContent_rgdItmCat']/tbody/tr/td")).getText(); // Record
-		Thread.sleep(1000);	
-			    
-		System.out.println(""+ Record);
-		Thread.sleep(1000);
-		
-		click_element(driver, "id","ctl00_MainContent_ImgExpExcel"); //Click on Export to Excel
-		Thread.sleep(2000);
-		}
-}
-*/

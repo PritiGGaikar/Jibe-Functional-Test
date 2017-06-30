@@ -23,7 +23,7 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	PurchaseSettings w = new PurchaseSettings();
 	
 
-   @Test(priority=20)
+   @Test(priority=24)
   public void PurchaseConfigsettingsURL() throws Exception {
 	   test=report.startTest("Purchase Config settingsURL");	  
 	   w.PurchaseConfigsettingsURL(driver);
@@ -32,42 +32,42 @@ public class PurchaseSettingsTest extends WebDriverPass{
 	  System.out.println("Purchase settings URL open successfully");
 	  
   }
- /* @Test(priority=21)
+  @Test(priority=25)
    public void PurchaseConfigSetting() throws Exception {
 	   test=report.startTest("Perchase Config Setting");	  
 	   w.PurchaseConfigSetting(driver);
 	   Assert.assertTrue(true);
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Purchase Config Setting");
-	  System.out.println("Positive Test Case for Perchase Config Setting is executed successfully ");
-	  System.out.println("Negative Test Case for Perchase Config Setting is executed successfully ");
-  }*/
+	  System.out.println("Perchase Config Setting is executed successfully ");
+	 
+  }
    
-   @Test(priority=22)
+   @Test(priority=26)
    public void PurchaseMandatory() throws Exception {
 	   test=report.startTest("PurchaseMandatory");	  
 	   w.PurchaseMandatory(driver);
 	   Assert.assertTrue(true);
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Purchase Mandatory"); 
-	  System.out.println("Positive Test Case for Purchase Mandatory is executed successfully ");
-	  System.out.println("Negative Test Case for Purchase Mandatory is executed successfully ");
+	  System.out.println("Purchase Mandatory is executed successfully ");
+	  
   }
-   @Test(priority=23)
+   @Test(priority=27)
    public void CaptureRank() throws Exception {
 	   test=report.startTest("CaptureRank");	  
 	   w.CaptureRank(driver);
 	   Assert.assertTrue(true);
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Capture Rank"); 
-	  System.out.println("Positive Test Case for Capture Rank is executed successfully ");
-	 	 System.out.println("Negative Test Case for Capture Rank is executed successfully ");
+	  System.out.println("Capture Rank is executed successfully ");
+	 
   }
-   @Test(priority=24)
+   @Test(priority=28)
    public void AutomaticRequisition() throws Exception {
 	   test=report.startTest("AutomaticRequisition");	  
 	   w.AutomaticRequisition(driver);
 	   Assert.assertTrue(true);
 	  test.log(LogStatus.PASS, "Purchase-->Admin-->Automatic Requisition"); 
 	  System.out.println("Positive Test Case for Automatic Requisition is executed successfully ");
-	 	 System.out.println("Negative Test Case for Automatic Requisition is executed successfully ");
+	 	
   }
    
    
@@ -86,7 +86,7 @@ public class PurchaseSettingsTest extends WebDriverPass{
   }
    @BeforeSuite
    public void beforeSu() {
-	   report = UnitPackings.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 		  
+	   report = LOTestingLabList.getReporter(path.concat("Report\\Purchase_Admin_Report.html"));		 		  
    
   /* @AfterSuite
   public void afterSu() {

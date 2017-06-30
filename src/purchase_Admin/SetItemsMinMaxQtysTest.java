@@ -22,7 +22,7 @@ public class SetItemsMinMaxQtysTest extends WebDriverPass{
 	SetItemsMinMaxQty w = new SetItemsMinMaxQty();
 	
 
-   @Test(priority=9)
+   @Test(priority=10)
   public void MinMaxQuantity() throws Exception {
 	   test=report.startTest("Min Max Quantity");	
 	   w.MinMaxQuantity(driver);
@@ -30,7 +30,7 @@ public class SetItemsMinMaxQtysTest extends WebDriverPass{
 	   test.log(LogStatus.PASS, "Purchase-->Admin-->Min Max Quantity"); 
 		  System.out.println("Set Items Min Max Quantity URL open successfully");
   }
-   @Test(priority=10)
+   @Test(priority=11)
    public void CatalogueItem() throws Exception {
  	   test=report.startTest("Catalogue Item");	  
  	   w.CatalogueItem(driver);

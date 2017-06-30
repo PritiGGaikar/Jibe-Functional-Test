@@ -35,15 +35,23 @@ public class LOTestingLabListTest extends WebDriverPass{
 	  test.log(LogStatus.PASS, "Purchase->Admin->Testing Lab List"); 
   }
    @Test(priority=1)
+   public void NegativeTestCaseforAddNewLab() throws Exception {
+	   test=report.startTest("NegativeTestCaseforAddNewLab");	  
+	   w.NegativeTestCaseforAddNewLab(driver);
+	   Assert.assertTrue(true);
+	   System.out.println("Negative Test Case for Add New Lab is Executed Successfully");
+	  test.log(LogStatus.PASS, "Purchase->Admin->Negative Test Case for Add New Lab"); 
+  }
+  
+   @Test(priority=2)
    public void AddNewLab() throws Exception {
 	   test=report.startTest("AddNewLab");	  
 	   w.AddNewLab(driver);
 	   Assert.assertTrue(true);
-	   System.out.println("Positive Test Case for Add New Lab is Executed Successfully");
-	   System.out.println("Negative Test Case for Add New Lab is Executed Successfully");
+	   System.out.println("Positive Test Case for Add New Lab is Executed Successfully");	  
 	  test.log(LogStatus.PASS, "Purchase->Admin->Add New Lab"); 
   }
-  
+   
    @Test(priority=3)
    public void EditLab() throws Exception {
 	   test=report.startTest("EditLab");	  
